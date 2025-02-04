@@ -20,7 +20,7 @@ function generateGrid(gridSize) {
     let allSquares = document.querySelectorAll(".square");
     allSquares.forEach(element => {
         element.addEventListener("mouseover", (e) => {
-            element.style.backgroundColor = "red";
+            element.style.backgroundColor = randomRGB();
         })
     });
 }
@@ -42,6 +42,14 @@ newBtn.addEventListener("click", () => {
     generateGrid(gridSize);
 })
 
+// Create a random color in RGB
+function rgb() {
+    return Math.floor(Math.random() * 255)
+}
+
+function randomRGB() {
+    return "rgb(" + rgb() + ", " + rgb() + ", " + rgb() + ")"
+}
 
 // Starting default grid
 generateGrid(gridSize);
